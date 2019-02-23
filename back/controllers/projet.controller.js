@@ -39,6 +39,18 @@ exports.getProjets = function (req, res)
     })
 }
 
+exports.getProjet = function(req, res)
+{
+    Projet.findById(req.params.id, (err, projet) =>
+    {
+        if(err)
+        {
+            console.log(err);
+        }
+        res.send(projet);
+    })
+}
+
 exports.updateProjet = function (req, res)
 {
     console.log(req.params);

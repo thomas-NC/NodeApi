@@ -1,10 +1,10 @@
 const db = require('mongoose');
-const Schema = db.Schema();
+const Schema = db.Schema;
 
 let SalarieSchema = new Schema(
     {
         name: String,
-        firsname: String,
+        firstname: String,
         username: String,
         birthday: Date,
         address: String,

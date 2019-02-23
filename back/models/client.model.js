@@ -1,5 +1,5 @@
 const db = require('mongoose');
-const Schema = db.Schema();
+const Schema = db.Schema;
 
 let ClientSchema = new Schema(
     {

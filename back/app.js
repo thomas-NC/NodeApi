@@ -28,9 +28,24 @@ app.get('/', (req, res) =>
 
 //partie projets
 app.get('/projets', projetController.getProjets);
+app.get('/projet:id', projetController.getProjet);
 app.post('/projet', projetController.createProjet);
 app.put('/projet:id', projetController.updateProjet);
 app.delete('/projet:id', projetController.deleteProjet);
+
+//partie salariés
+app.get('/salaries', salarieController.getSalaries);
+app.get('/salarie:id', salarieController.getSalarie);
+app.post('/salarie', salarieController.createSalarie);
+app.put('/salarie:id', salarieController.updateSalarie);
+app.delete('/salarie:id', salarieController.deleteSalarie);
+
+//partie clients
+app.get('/clients', clientController.getClients);
+app.get('/client:id', clientController.getClient);
+app.post('/client', clientController.createClient);
+app.put('/client:id', clientController.updateClient);
+app.delete('/client:id', clientController.deleteClient);
 
 app.listen(3333, (err) =>
 {
