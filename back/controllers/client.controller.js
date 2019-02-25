@@ -2,6 +2,7 @@ const Client = require('../models/client.model.js');
 
 exports.createClient = function(req, res)
 {
+    console.log(req.body);
     let client = new Client (
         {
             name: req.body.name,

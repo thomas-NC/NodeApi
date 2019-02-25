@@ -5,7 +5,7 @@ exports.createSalarie = function(req, res)
     let salarie = new Salarie (
         {
             name: req.body.name,
-            firstname: req.body.name,
+            firstname: req.body.firstname,
             username: req.body.username,
             birthday: req.body.birthday,
             address: req.body.adress,

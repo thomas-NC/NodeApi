@@ -1,4 +1,4 @@
-<<template>
+<template>
     <div>
         <router-link to="/">Home</router-link> |
         <router-link to="/projets">Projets</router-link> |
