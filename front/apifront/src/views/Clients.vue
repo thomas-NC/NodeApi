@@ -42,6 +42,13 @@ export default {
     {
       this.clients = data;
     })
+  },
+  updated() {
+    ClientService.getAllClients()
+    .then((data) =>
+    {
+      this.clients = data;
+    })
   }
   
 }

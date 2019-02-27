@@ -3,10 +3,10 @@
     <Header/>
         <h2>Modification Client </h2>
         <form action="" method="post">
-            <input type="text" v-model="form.name" placeholder="nom">
-            <input type="text" v-model="form.adress" placeholder="adresse">
-            <input type="text" v-model="form.refcontact" placeholder="contact référent">
-            <input type="text" v-model="form.activity" placeholder="activité">
+            <input type="text" v-model="form.name">
+            <input type="text" v-model="form.adress">
+            <input type="text" v-model="form.refcontact">
+            <input type="text" v-model="form.activity">
             <button type="button" name="button" v-on:click="formData(form.name, form.adress, form.refcontact, form.activity)">modifier client</button>
         </form>
     </div>
@@ -28,19 +28,23 @@ export default {
                 adress: "",
                 refcontact: "",
                 activity: ""
-            }
-            
+            }          
         }
     },
     methods: {
         formData: function(name, adress, refcontact, activity)
         {
             ClientService.updateClient(this.id , name, adress, refcontact, activity);
-            //console.log(id +name + adress + refcontact + activity);
-            //redirection sur la page clients après la création du client
-            //this.$router.push('/clients');
+            this.$router.push('/clients');
         }
         
+    },
+    created() {
+        ClientService.getClient(this.id)
+        .then((data) =>
+        {
+            this.form = data;
+        })   
     }
 }
 </script>

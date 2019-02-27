@@ -32,9 +32,7 @@ export default {
         formData: function(name, adress, refcontact, activity)
         {
             ClientService.createClient(name, adress, refcontact, activity);
-            console.log(name + adress + refcontact + activity);
-            //redirection sur la page clients après la création du client
-            //this.$router.push('/clients');
+            this.$router.push('/clients');
         }
         
     }
