@@ -1,15 +1,15 @@
 <template>
-    <div class="form-update">
-        <h2>Update Client</h2>       
-        <Form/>
+    <div class="form-create">
+        <h2>Create Project</h2>
+        <Form :create="true"/>  
     </div>
 </template>
 
 <style lang="css" scoped>
-.form-update {
+.form-create {
     background: -webkit-linear-gradient(to right, #6c3483, #48c9b0); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #b274d7, #48c9b0);
-    min-height: 768px;
+    min-height: 900px;
 }
 h2 {
     text-align: center;
@@ -21,7 +21,7 @@ h2 {
 </style>
 
 <script>
-import Form from '../components/FormsClient.vue'
+import Form from '../components/FormsProjet.vue'
 
 export default {
     components: {

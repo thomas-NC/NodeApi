@@ -1,23 +1,21 @@
 <template>
     <div class="container">
         <div class="content">
-            <h1>{{client.name}}</h1>
-            <p><strong>adresse:</strong> {{ client.adress.street }}, {{ client.adress.cp }}, {{ client.adress.city }}</p>
-            <p><strong>contact référent:</strong>
-                <ul class="refcontact">
-                    <li>name: {{client.refcontact.name}}</li>
-                    <li>tel: {{client.refcontact.tel}}</li>
-                    <li>mail: {{client.refcontact.mail}}</li>
-                </ul>
-            </p>
-            <p><strong>secteur d'activité:</strong> {{client.activity}}</p>
+            <h1>{{projet.name}}</h1>
+            <p><strong>name:</strong> {{projet.name}}</p>
+            <p><strong>desc:</strong> {{projet.desc}}</p>
+            <p><strong>date start:</strong> {{projet.datestart}}</p>
+            <p><strong>date end:</strong> {{projet.dateend}}</p>
+            <p><strong>cost:</strong> {{projet.cost}}</p>
+            <p><strong>status:</strong> {{projet.status}}</p>
             <div class="buttons-layout">
-                <button class="buttons" type="button" v-on:click="deleteItem(id)">Supprimer un client</button>
-                <router-link class="buttons" tag="button" :to="{ name: 'clientUpdate', query: { id: client._id }}">Modifier un client</router-link>
+                <button class="buttons" type="button" v-on:click="deleteItem(id)">Supprimer un projet</button>
+                <router-link class="buttons" tag="button" :to="{ name: 'projetUpdate', query: { id: projet._id }}">Modifier un projet</router-link>
             </div>
         </div>
     </div>
 </template>
+
 <style lang="css" scoped>
 .container {
   background: -webkit-linear-gradient(to right, #6c3483, #48c9b0); /* Chrome 10-25, Safari 5.1-6 */
@@ -43,13 +41,6 @@
 .content p {
     font-size: 20px;
     padding: 10px 30px 0px 40px;
-}
-.refcontact {
-    list-style-type: none;
-    padding-left: 25px;
-}
-.refcontact li {
-    padding: 5px 20px 5px 10px;
 }
 .buttons-layout {
     width: 100%;
@@ -78,26 +69,26 @@
 </style>
 
 <script>
-import ClientService from '../services/ClientService.vue';
+import ProjetService from '../services/ProjetService.vue';
 
 export default {
     data() {
         return {
             id: this.$route.query.id,
-            client: []
+            projet: []
         }
     },
     created() {
-        ClientService.getClient(this.$route.query.id)
+        ProjetService.getProjet(this.$route.query.id)
         .then((data) =>
         {
-            this.client = data;
+            this.projet = data;
         })   
     },
     methods: {
         deleteItem: function(id){
-            ClientService.deleteClient(id)
-            this.$router.push('/clients');
+            ProjetService.deleteProjet(id)
+            this.$router.push('/projets');
         }
     }
 

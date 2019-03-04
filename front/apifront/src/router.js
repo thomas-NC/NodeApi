@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Projets from './views/Projets.vue'
+import ProjetDetail from './views/ProjetDetail.vue'
+import ProjetCreate from './views/ProjetCreate.vue'
+import ProjetUpdate from './views/ProjetUpdate.vue'
 import Salaries from './views/Salaries.vue'
 import SalarieDetail from './views/SalarieDetail.vue'
 import SalarieCreate from './views/SalarieCreate.vue'
@@ -27,6 +30,21 @@ export default new Router({
       path: '/projets',
       name: 'projets',
       component: Projets
+    },
+    {
+      path: '/projet',
+      name: 'projet',
+      component: ProjetDetail
+    },
+    {
+      path: '/projet-create',
+      name: 'projetCreate',
+      component: ProjetCreate
+    },
+    {
+      path: '/projet-update',
+      name: 'projetUpdate',
+      component: ProjetUpdate
     },
     {
       path: '/salaries',

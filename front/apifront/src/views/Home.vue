@@ -88,6 +88,7 @@
   font-size: 35px;
   color: white;
   margin: 0 10px 0 10px;
+  padding: 5px 0px 0 0;
   font-weight: bold;
   background-color: black;
   border-radius: 50px;

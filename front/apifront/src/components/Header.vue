@@ -1,9 +1,9 @@
 <template>
     <div class="navbar">
         <router-link class="button" tag="md-button" to="/">Home</router-link> 
-        <router-link class="button" tag="md-button" to="/projets">Projets</router-link> 
+        <router-link class="button" tag="md-button" to="/projets">Projects</router-link> 
         <router-link class="button" tag="md-button" to="/clients">Clients</router-link> 
-        <router-link class="button" tag="md-button" to="/salaries">Salaries</router-link>
+        <router-link class="button" tag="md-button" to="/salaries">Employees</router-link>
     </div>
 </template>
 
@@ -15,10 +15,10 @@
 
 <style lang="css" scoped>
     .button {
-        background-color: black;
-        color: white;
-        text-shadow: 2px 2px  #6c3483;
-        box-shadow: 2px 2px #48c9b0;
+        background-color: white;
+        color: #6c3483;
+        font-weight: bold;
+        box-shadow: 2px 2px #6c3483;
     }
     .navbar {
         width: 100%;

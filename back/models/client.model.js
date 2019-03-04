@@ -4,8 +4,16 @@ const Schema = db.Schema;
 let ClientSchema = new Schema(
     {
         name: String,
-        adress: String,
-        refcontact: String,
+        adress: {
+            street: String,
+            city: String,
+            cp: Number
+        },
+        refcontact: {
+            name: String,
+            tel: String,
+            mail: String
+        },
         activity: String
     }
 )

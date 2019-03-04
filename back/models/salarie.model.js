@@ -7,7 +7,11 @@ let SalarieSchema = new Schema(
         firstname: String,
         username: String,
         birthday: Date,
-        address: String,
+        address: {
+            street: String,
+            city: String,
+            cp: Number
+        },
         tel: String,
         mail: String,
         job: String
