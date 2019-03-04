@@ -28,7 +28,6 @@
     </div>
     
   </div>
-  
 </template>
 
 <style scoped>
@@ -51,6 +50,7 @@
   border-top-right-radius: 2px; 
   border-top-left-radius: 2px; 
   background-color: white;
+  max-width: 1360px;
   width: 90%;
   overflow-x: auto;
 }
@@ -58,7 +58,7 @@
   border-collapse: collapse;
   width: 100%;
   max-width: 1360px;
-  min-width: 1024px;
+  min-width: 1064px;
 }
 .table-layout tr td {
   min-width: 256px;
