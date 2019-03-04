@@ -1,6 +1,5 @@
 <template>
     <div>
-        <Header/>
         <h1>{{client.name}}</h1>
         <p>adresse: {{client.adress}}</p>
         <p>contact référent: {{client.refcontact}}</p>
@@ -12,13 +11,9 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue'
 import ClientService from '../services/ClientService.vue';
 
 export default {
-    components: {
-        Header
-    },
     data() {
         return {
             id: this.$route.query.id,

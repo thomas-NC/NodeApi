@@ -18,22 +18,24 @@ exports.getData = function (req, res) {
                 console.log(err);
             }
             data.clients += clients.length;
-        })
-        Projet.find({}, (err, projets) =>
-        {
-            if(err)
+            Projet.find({}, (err, projets) =>
             {
-                console.log(err);
-            }
-            data.projets = projets.length;
+                if(err)
+                {
+                    console.log(err);
+                }
+                data.projets = projets.length;
+                Salarie.find({}, (err, salaries) =>
+                {
+                    if(err)
+                    {
+                        console.log(err);
+                    }
+                    data.salaries = salaries.length;
+                    res.send(data); 
+                }) 
+            })
+        
         })
-        Salarie.find({}, (err, salaries) =>
-        {
-            if(err)
-            {
-                console.log(err);
-            }
-            data.salaries = salaries.length;
-            res.send(data); 
-        })  
+         
     }

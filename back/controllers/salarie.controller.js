@@ -8,7 +8,7 @@ exports.createSalarie = function(req, res)
             firstname: req.body.firstname,
             username: req.body.username,
             birthday: req.body.birthday,
-            address: req.body.adress,
+            address: req.body.address,
             tel: req.body.tel,
             mail: req.body.mail,
             job: req.body.job

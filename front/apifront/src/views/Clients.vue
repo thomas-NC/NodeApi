@@ -1,6 +1,5 @@
 <template>
   <div class="clients">
-    <Header/>
     <h1>Page Clients</h1>
     <router-link tag="button" to='/client-create'>Ajouter un Client</router-link>
     <table v-for="client in clients">
@@ -24,13 +23,9 @@ table, tr, td {
 </style>
 
 <script>
-import Header from '../components/Header.vue'
 import ClientService from '../services/ClientService.vue'
 
 export default {
-  components: {
-    Header
-  },
   data(){
     return {
       clients: []
